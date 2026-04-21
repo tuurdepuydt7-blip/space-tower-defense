@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orbit Bastion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="hud-panel">
+      <p class="eyebrow">Interplanetary Defense Command</p>
+      <h1>Orbit Bastion</h1>
+      <p class="intro">
+        Build towers, protect the route, and push deeper into the solar frontier. Each planet gets rougher, faster, and stranger.
+      </p>
+
+      <section class="planet-card">
+        <div class="planet-header">
+          <div>
+            <p class="label">Current Planet</p>
+            <h2 id="planet-name">Mercury</h2>
+          </div>
+          <div class="planet-badge" id="planet-tier">Tier 1</div>
+        </div>
+        <p id="planet-description" class="planet-description"></p>
+      </section>
+
+      <section class="stats-grid">
+        <article>
+          <span class="label">Hull</span>
+          <strong id="lives">20</strong>
+        </article>
+        <article>
+          <span class="label">Credits</span>
+          <strong id="credits">160</strong>
+        </article>
+        <article>
+          <span class="label">Wave</span>
+          <strong id="wave">0 / 6</strong>
+        </article>
+        <article>
+          <span class="label">Threat</span>
+          <strong id="threat">Calm</strong>
+        </article>
+      </section>
+
+      <section class="controls">
+        <button id="start-wave-btn" class="primary">Start Wave</button>
+        <button id="next-planet-btn" class="secondary" disabled>Travel To Next Planet</button>
+      </section>
+
+      <section class="build-panel">
+        <div class="section-heading">
+          <h3>Build Towers</h3>
+          <p>Click a glowing pad, then deploy.</p>
+        </div>
+        <div class="tower-list" id="tower-list"></div>
+      </section>
+
+      <section class="mission-log">
+        <div class="section-heading">
+          <h3>Mission Log</h3>
+          <p>Live tactical updates.</p>
+        </div>
+        <div id="message-log" class="message-log" aria-live="polite"></div>
+      </section>
+    </aside>
+
+    <main class="battlefield-panel">
+      <div class="battlefield-topbar">
+        <p id="status-line">Select a tower pad to start fortifying Mercury.</p>
+        <div class="legend">
+          <span><i class="swatch path"></i>Enemy Route</span>
+          <span><i class="swatch pad"></i>Tower Pads</span>
+        </div>
+      </div>
+      <canvas id="game-canvas" width="1100" height="680" aria-label="Space tower defense battlefield"></canvas>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
